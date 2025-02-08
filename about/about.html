@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulateur de Terminal</title>
+    <link rel="stylesheet" href="about.css"> <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="../transition.css"> <!-- Lien vers le fichier CSS de transition -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=NTR&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+
+    <div class ="transition">
+        <div class = "transition-row row-1">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class = "transition-row row-2">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+    </div>
+
+    <div id="terminal" class="terminal-container hidden">
+        <div class="terminal-header">
+            <div class="buttons">
+                <span id="minimize"></span>
+                <span id="maximize"></span>
+                <span id="close"><a href="../index.html"></a></span>
+            </div>  
+            <div class="title">root@kabi</div>
+        </div>
+        <div class="terminal-divider"></div>
+        <div class="terminal-body">
+            <pre class="terminal-content">
+                <span id="prompt" class="prompt hidden">root@kabi:~$</span><span id="typing" class="prompt-text">  whoami<span>
+            </pre>
+
+            <div id="presentation" class = "whoami hidden">
+                <p>I am a first-year Master's student in Computer Science at Lyon 2 and passionate about cybersecurity. I have a solid foundation in computer science, with strong knowledge in programming, systems, and networks. While I am a novice in penetration testing (pentesting), I am actively expanding my expertise in this area.</p>
+            </div>
+
+            <pre id="prompt-experience" class="terminal-content">
+                <span id="prompt2" class="prompt hidden">root@kabi:~$</span><span class = "prompt-text2 hidden">  ls /var/log/experiences/ <span>
+            </pre>
+
+            <div id="experience" class = "experience hidden">
+                <img src="../assets/dna2.png" style="width: 15%;">
+                <div class = "experience-description">
+                    <div class="experience-title">
+                        <h2>Digital Neo Academy (DNA)</h2>
+                        <p>Internship – April 2024 to June 2024 (2 months, remote)</p>
+                    </div>
+                    <ul>
+                        <li>WordPress Development: Created and customized websites using WordPress.</li>
+                        <li>Security Audit: Analyzed vulnerabilities and recommended improvements to secure the web environment.</li>
+                        <li>WordPress and Web Security: Implemented measures to enhance website security and conducted security audits.</li>
+                    </ul>
+                
+                </div>
+            </div>
+
+
+            <pre class="terminal-content">
+                <span id="prompt3" class="prompt hidden">root@kabi:~$</span><span class = "prompt-text3 hidden">  grep "skills" /cv.txt <span>
+            </pre>
+
+            <div class ="skill-container">
+                <div class="skillgroup hidden">
+                    <h2>Web Development</h2>
+                    <div class="web-dev">
+                        <div class="skill">
+                            <img src="../assets/js.png">
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/html.png">
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/css.png">
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/php.png">
+                            <p>PHP</p>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="skillgroup hidden">
+                    <h2>Languages</h2>
+                    <div class="prog">
+                        <div class="skill">
+                            <img src="../assets/python.png">
+                            <p>Python</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/html.png">
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/c.png">
+                            <p>C++</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/swift.png">
+                            <p>Swift</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/mysql.png">
+                            <p>MySQL</p>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="skillgroup hidden">
+                    <h2>Tools</h2>
+                    <div class="tool  ">
+                        <div class="skill">
+                            <img src="../assets/xcode.png">
+                            <p>xCode</p>
+                        </div>
+
+                        <div class="skill">
+                            <img src="../assets/access.png">
+                            <p>Access</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/azure.png">
+                            <p>Azure</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/docker.png">
+                            <p>Docker</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/cisco.png">
+                            <p>Cisco Packet Tracer</p>
+                        </div>
+                        <div class="skill">
+                            <img src="../assets/postgre.png">
+                            <p>PostgreSQL</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="about.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>

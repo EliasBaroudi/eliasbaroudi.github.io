@@ -1,0 +1,363 @@
+/* Style général */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
+    font-weight: 100; /* Utiliser la variante thin de la police */
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+header {
+    padding-top: 3rem; /* Augmenter le padding en haut */
+    padding-left: 2rem; /* Augmenter le padding à gauche */
+    padding-right: 8rem; /* Conserver le padding à droite */
+    padding-bottom: 1rem; /* Conserver le padding en bas */
+    text-align: right;
+}
+
+#nav a {
+    margin-left: 70px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.7rem;
+    transition: color 0.3s;
+}
+
+#nav a:hover {
+    color: #1e90ff;
+}
+
+#nav a.active {
+    color: #1e90ff;
+}
+
+main {
+    padding: 2rem;
+}
+
+.top-div {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+
+
+#text-container{
+    padding-top: 9rem;
+    padding-left: 4rem;
+    width: 650px;
+}
+
+#presentation {
+    width: 1000px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+#presentation p {
+    margin: 0.5rem 0;
+    font-size: 3.03rem;
+}
+
+#pres-name {
+    font-size: 4.7rem;
+}
+
+#presentation .name-highlight {
+    font-weight: bold;
+    color: #1e90ff;
+}
+
+#synopsis {
+    color: #b9b9b9;
+    width: 650px; 
+    margin-top: 5rem;
+    margin-left: 0; 
+    margin-right: auto; 
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: left; 
+}
+
+footer {
+    text-align: center;
+    margin-top: 8rem;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Styles pour la section Kali Linux */
+#kali-container {
+    position: relative;
+    width: 55%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -22rem;
+    margin-left: 810px;
+}
+
+#center-logo {
+    z-index: 3;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    animation: tremble 5s infinite ease-in-out;
+}
+
+#center-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9); /* Ajouter une ombre tout autour */
+    transition: transform 0.1s ease; /* Transition pour un mouvement fluide */
+}
+
+/* Animation du logo (tremblement léger) */
+@keyframes tremble {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(3px, -2px); }
+    50% { transform: translate(-3px, 2px); }
+    75% { transform: translate(2px, 3px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Style des boutons autour du logo */
+
+/* S'assure que les liens <a> entourant les boutons ne cassent pas la mise en page */
+.button-link {
+    display: inline-block; /* Permet à <a> de prendre la taille du bouton */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Empêche les boutons de se superposer ou de s'écraser */
+.button {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(60deg, #6cb8f7, #2777ff);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
+}
+
+/* Corrige le problème de chevauchement */
+.button-group {
+    z-index: 1  ;
+    display: flex;
+    flex-wrap: wrap; /* Assure que les boutons restent bien alignés */
+    justify-content: center;
+    gap: 20px; /* Ajoute un espace entre les boutons */
+}
+
+.button-group {
+    position: relative;
+    width: 800px; /* Augmenter la largeur pour plus d'espace */
+    height: 800px; /* Augmenter la hauteur pour plus d'espace */
+}
+
+/* CSS */
+.button {
+    appearance: button;
+    border-radius: 50%;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: din-round, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 15px 25px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: transform 0.2s ease-out, filter .2s, box-shadow 0.2s, background-color 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+}
+
+
+.button:after {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-radius: 50%;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.button,
+.button:focus {
+    user-select: auto;
+}
+
+.button:disabled {
+    cursor: auto;
+}
+
+.button:active {
+    border-width: 4px 0 0;
+    background-color: #6cb8f7; /* Changer le fond en rouge au clic */
+}
+
+.button:hover {
+    transform: scale(1.5); /* Agrandir le bouton au survol */
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), radial-gradient(circle, #498cff 0%, rgba(30, 144, 255, 0) 70%);
+}
+
+.button:nth-child(1) {
+    width: 260px; /* Taille spécifique pour le premier bouton */
+    height: 260px;
+    top: 17%; /* Ajuster la position */
+    left: 15%;
+}
+
+.button:nth-child(2) {
+    width: 230px; /* Taille spécifique pour le premier bouton */
+    height: 230px;
+    top: 23%; /* Ajuster la position */
+    right: 15%;
+}
+
+.button:nth-child(3) {
+    width: 200px; /* Taille spécifique pour le premier bouton */
+    height: 200px;
+    bottom: 15%; /* Ajuster la position */
+    left: 25%;
+}
+
+.button:nth-child(4) {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    bottom: 25%;
+    right: 20%;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left center;
+   }
+   
+   .button:nth-child(4):hover {
+    transform: translateX(100px);
+    width: 400px; /* Rectangle plus large */
+    border-radius: 80px;
+    opacity: 0.9;
+   }
+
+.button:nth-child(4) .icons {
+    display: none; /* Masquer les icônes par défaut */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button:nth-child(4) .icons a {
+    margin: 0 10px; /* Ajouter une marge pour espacer les icônes */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+
+.button:nth-child(4):hover .icons {
+    margin-left: 0px;
+    display:contents;
+    justify-content: left;
+    align-items: left;
+}
+
+.button:nth-child(4) .icons #linkedin:hover, #github:hover, #mail:hover{
+    transition: transform 0.3s; /* Transition pour un effet fluide */
+    transform: scale(1.2); /* Agrandir légèrement au survol */
+}
+
+.button:nth-child(4) .icons #linkedin, #github, #mail{    
+    transition: transform 0.3s; /* Transition pour un effet fluide */
+}
+
+
+
+.button:nth-child(4) .contact-text {
+    transition: opacity 0.2s ease-in-out; /* Transition pour masquer le texte */
+}
+
+.button:nth-child(4):hover .contact-text {
+    display: none;
+}
+
+.notification {
+    position: absolute;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none; /* Masquer par défaut */
+    z-index: 1000; /* Assurer que la notification est au-dessus des autres éléments */
+}
+
+
+.button-group a {
+    color: white;
+    font-family: "NTR", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    text-decoration: none;
+}
+
+.button-group span{
+    color: white;
+    font-family: "NTR", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.button-group a:visited {
+    color: inherit; /* Garder la couleur initiale après la visite */
+}
+
+.icons a{
+    height: 70%;
+    width: 50%;
+}

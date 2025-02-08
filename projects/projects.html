@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulateur de Terminal</title>
+    <link rel="stylesheet" href="projects.css"> <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="../transition.css"> <!-- Lien vers le fichier CSS de transition -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=NTR&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+
+    <div class ="transition">
+        <div class = "transition-row row-1">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class = "transition-row row-2">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+    </div>
+
+    <div id="terminal" class="terminal-container hidden">
+        <div class="terminal-header">
+            <div class="buttons">
+                <span id="minimize"></span>
+                <span id="maximize"></span>
+                <span id="close"><a href="../index.html"></a></span>
+            </div>
+            <div class="title">root@kabi</div>
+        </div>
+        <div class="terminal-divider"></div>
+        <div class="terminal-body">
+            <pre class="terminal-content">
+                <span id="prompt" class="prompt hidden">root@kabi:~$</span><span id="typing" class = "prompt-text">  ls projects/<span>
+            </pre>
+
+            <div class="project-container">
+
+                <div class="project hidden">
+                    <img class="img" src="../assets/secupapers.png"/>
+                    <div class="project-desc">
+                        <h2>SecuPapers (Search Engine)</h2>
+                        <div class="tech">
+                            <p>Python</p>
+                            <p>Dash</p>
+                            <p>Data Mining</p>
+                            <p>APIs</p>
+                        </div>
+                        <p class="project-text">Development of a search engine designed to deliver relevant results on CVEs by leveraging data mining techniques, such as TF-IDF, to enhance the accuracy and relevance of the retrieved information.
+                        </p>
+                        <a id="except" href="https://github.com/EliasBaroudi/search-engine-python" class="btn"><img src="../assets/github.svg" alt="Icône">GitHub</a>
+                    </div>
+
+                </div>
+
+                <div class="project hidden">
+                    <img class="img" src="../assets/outphish.png"/>
+                    <div class="project-desc">
+                        <h2>Outphish (Microsoft Azure Development)</h2>
+                        <div class="tech">
+                            <p>Python</p>
+                            <p>Azure</p>
+                            <p>Python</p>
+                            <p>AI</p>
+                            <p>FastAPI</p>
+                            <p>HTML/CSS/JS</p>
+                        </div>
+                        <p class="project-text">Software for detecting suspicious emails using a manually trained model within the context of Cloud development on Azure.</p>
+                        <a href="https://github.com/EliasBaroudi/cloud-computing-project" class="btn"><img src="../assets/github.svg" alt="Icône">GitHub</a>
+                    </div>
+
+                </div>
+
+                <div class="project hidden">
+                    <img class="img" src="../assets/planing.png"/>
+                    <div class="project-desc">
+                        <h2>Planning Poker</h2>
+                        <div class="tech">
+                            <p >Python</p>
+                            <p>GitHub Actions</p>
+                            <p>Doxygen</p>
+                            <p>pytest</p>
+                        </div>
+                        <p class="project-text">Development of a software application for playing Planning Poker, aimed at understanding agile project design methodologies in software development.</p>	
+
+                        <a  href="https://github.com/EliasBaroudi/projet-conception" class="btn"><img src="../assets/github.svg" alt="Icône">GitHub</a>
+                    </div>
+
+                </div>
+
+                <div class="project hidden">
+                    <img id="gif" src="../assets/camedit.gif"/>
+                    <div class="project-desc">
+                        <h2>CamEdit Studio</h2>
+                        <div class="tech">
+                            <p >Python</p>
+                            <p>Open-CV</p>
+                            <p>Haar Cascades</p>
+                            <p>Computer Vision</p>
+                        </div>
+                        <p class="project-text">Software for live video stream editing via webcam, utilizing object recognition techniques based on Haar cascades.</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="projects.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>

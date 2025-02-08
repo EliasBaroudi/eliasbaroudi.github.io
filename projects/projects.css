@@ -1,0 +1,335 @@
+/* Style général */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
+    font-weight: 100; /* Utiliser la variante thin de la police */
+    background: url('../assets/background.png') no-repeat center center fixed; /* Remplacez par le chemin de votre image de fond */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteneur du terminal */
+.terminal-container {
+    width: 90%; /* Augmenter la largeur pour remplir 90% de l'écran */
+    height: 90%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    border-radius: 8px;
+    border: 1px solid #000000; /* Ajouter une bordure noire */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* En-tête du terminal */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000000de; /* Couleur de fond de l'en-tête */
+    color: white;
+    position: relative;
+}
+
+.terminal-header .buttons {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    right: 10px; /* Positionner les boutons à droite */
+    top: 50%;
+    transform: translateY(-50%); /* Centrer verticalement */
+}
+
+.terminal-header .title {
+    flex-grow: 1;
+    text-align: center;
+    color: #ffffff; /* Couleur du texte de l'en-tête */
+}
+
+.terminal-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #000000; /* Couleur de la ligne */
+}
+
+/* Corps du terminal */
+.terminal-body {
+    width: 100%; /* Augmenter la largeur pour remplir 90% de l'écran */
+    height: 100%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    background-color: #000000de; /* Couleur de fond du corps du terminal */
+}
+
+.terminal-content {
+    margin-top : -40px;
+    display: flex;
+    flex-direction: line;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.terminal-content .prompt {
+    font-size: 12px;
+    color: #ff0000; /* Couleur de l'invite de commande */
+}
+
+.terminal-content .prompt-text {
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+}
+
+#close:hover::before,
+#close:hover::after {
+    background-color: rgba(255, 255, 255, 0.75); /* Couleur légèrement plus sombre */
+    transform: translate(-50%, -40%) rotate(45deg); /* Descendre légèrement sur l'axe Y */
+}
+
+#close:hover::after {
+    transform: translate(-50%, -40%) rotate(-45deg); /* Descendre légèrement sur l'axe Y */
+}
+
+#close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    z-index: 3; /* Assurez-vous que le bouton est bien au-dessus */
+}
+
+#close a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5; /* Mettre le lien au-dessus des pseudo-éléments */
+}
+
+#close::before,
+#close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform-origin: center;
+    z-index: 4; /* Inférieur au lien mais supérieur au fond */
+}
+
+#close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#maximize {
+    margin-top: 4px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgb(255, 255, 255); /* La bordure noire du carré */
+    background-color: transparent; /* Pas de remplissage */
+}
+
+#minimize::before {
+    content: '';
+    position: absolute;
+    top: 75%;
+    left: -20%;
+    width: 25%; /* Ajuster la largeur de la barre horizontale */
+    height: 2px; /* Épaisseur de la barre */
+    background-color: rgb(255, 255, 255); /* Couleur de la barre */
+    transform: translate(-50%, -50%);
+}
+
+.project .img {
+    margin-top:-60px;
+    width: 100%; /* Faire en sorte que l'image prenne toute la largeur du conteneur */
+    height: 200px; /* Ajuster la hauteur automatiquement */
+    object-fit: cover; /* Couper l'image pour qu'elle s'adapte au conteneur */
+}
+
+#gif{
+    margin-top: -60px;
+    width: 400px;
+    height: 202px; /* Ajuster la hauteur automatiquement */
+
+}
+
+.project-container {
+    margin-left: 10px;
+    margin-top: -30px;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Permettre le retour à la ligne si ça dépasse */
+    justify-content: flex-start;
+}
+
+.project {
+    border-radius: 12px;
+    background-color: white;
+    height: 600px;
+    width: 23%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column; /* Disposer les éléments en colonnes */
+    align-items: center; /* Centrer les éléments horizontalement */
+    overflow: hidden; /* Empêcher les images de dépasser */
+    transform: translateY(3px); /* Déplacer légèrement vers le haut */
+    opacity: 0;
+    transition: transform 0.5s ease; /* Ajouter une transition smooth */
+    transition: opacity 1s ease-in-out;
+}
+
+.project.visible:hover {
+    transform: translateY(-3px);
+}
+
+
+.project:hover {
+    transform: translateY(-3px); /* Déplacer légèrement vers le haut */
+    transition: transform 0.5s ease; /* Ajouter une transition smooth */
+}
+
+.project:hover .img {
+    transform: scale(1.05); /* Agrandir légèrement l'image */
+    transition: transform 0.5s ease; /* Ajouter une transition smooth */
+}
+
+.project h2{
+    font-family: "NTR", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: black;
+    font-size: 25px;
+}
+
+.project ul {
+    margin-top: -20px;
+    color: balck;
+    font-size: 13px;
+    line-height: 1; /* Retirer l'espacement entre les lignes */
+}
+
+.project-desc {
+    margin-top: -10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-text{
+    margin-top: -5px;
+}
+
+.btn {
+    height: 40px; /* Augmenter légèrement la hauteur pour plus d'équilibre */
+    width: fit-content; /* Ajuster la largeur en fonction du contenu */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: left; /* Centrer horizontalement et verticalement */
+    background-color: #1e90ff;
+    color: rgb(255, 255, 255);
+    padding: 5px 15px; /* Ajuster le padding pour équilibrer l'espace */
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background 0.3s;
+    gap: 8px; /* Ajout d'un espace fixe entre l'image et le texte */
+    line-height: 3px; /* Centrer verticalement le texte */
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+    display: block; /* Empêcher les espaces indésirables */
+}
+
+.btn:hover {
+    background-color: #0558ac;
+    box-shadow: 0 0 10px #1e90ff;
+    animation: shadow-pulse 1s infinite alternate;
+    transform: scale(1.05); /* Agrandir légèrement la taille */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Ajouter un effet smooth */
+}
+
+#except{
+    margin-top: -8px;
+}
+
+.tech {
+    margin-left: -15px;
+    margin-top: -10px;
+    gap:2px;
+    display: flex;
+    flex-wrap: wrap; /* Permettre le retour à la ligne si ça dépasse */
+    padding: 10px; /* Ajouter un peu de padding */
+}
+
+.tech p {
+    margin-top:0px;
+    height: 20px;
+    font-weight: bold;   
+    color: rgb(0, 0, 145);
+    font-size: 15px;;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 8px;;
+    background-color: #1e8fff71;
+    border-radius: 14px; /* Ajouter un rayon de bordure */
+}
+
+/* Animation */
+.prompt-text {
+    animation: typewriter 0.5s steps(12) 1.5s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+#typing{
+    margin-left: 13px;
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+    border-right: 2px solid rgba(255,255,255,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 5rem; }
+}
+
+@keyframes blinkTextCursor {
+    0%, 100% { border-right-color: rgba(255, 255, 255, .75); }
+    50% { border-right-color: transparent; }
+}
+
+
+/* Hidden and visible classes for animations */
+.hidden {
+    visibility: hidden;
+}
+
+.project.visible {
+    opacity: 1; /* Rendre visible */
+    transform: translateY(0); /* Ramener à la position initiale */
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}

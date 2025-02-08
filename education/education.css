@@ -1,0 +1,380 @@
+/* Style général */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
+    font-weight: 100; /* Utiliser la variante thin de la police */
+    background: url('../assets/background.png') no-repeat center center fixed; /* Remplacez par le chemin de votre image de fond */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteneur du terminal */
+.terminal-container {
+    width: 90%; /* Augmenter la largeur pour remplir 90% de l'écran */
+    height: 90%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    border-radius: 8px;
+    border: 1px solid #000000; /* Ajouter une bordure noire */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* En-tête du terminal */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000000de; /* Couleur de fond de l'en-tête */
+    color: white;
+    position: relative;
+}
+
+.terminal-header .buttons {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    right: 10px; /* Positionner les boutons à droite */
+    top: 50%;
+    transform: translateY(-50%); /* Centrer verticalement */
+}
+
+.terminal-header .title {
+    flex-grow: 1;
+    text-align: center;
+    color: #ffffff; /* Couleur du texte de l'en-tête */
+}
+
+.terminal-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #000000; /* Couleur de la ligne */
+}
+
+/* Corps du terminal */
+.terminal-body {
+    width: 100%; /* Augmenter la largeur pour remplir 90% de l'écran */
+    height: 100%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    background-color: #000000de; /* Couleur de fond du corps du terminal */
+}
+
+.terminal-content {
+    margin-top : -40px;
+    display: flex;
+    flex-direction: line;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.terminal-content img{
+}
+
+.terminal-content .prompt {
+    font-size: 12px;
+    color: #ff0000; /* Couleur de l'invite de commande */
+}
+
+#typing{
+    margin-left: 20px;
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+    border-right: 2px solid rgba(255,255,255,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+#close:hover::before,
+#close:hover::after {
+    background-color: rgba(255, 255, 255, 0.75); /* Couleur légèrement plus sombre */
+    transform: translate(-50%, -40%) rotate(45deg); /* Descendre légèrement sur l'axe Y */
+}
+
+#close:hover::after {
+    transform: translate(-50%, -40%) rotate(-45deg); /* Descendre légèrement sur l'axe Y */
+}
+
+#close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    z-index: 3; /* Assurez-vous que le bouton est bien au-dessus */
+}
+
+#close a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5; /* Mettre le lien au-dessus des pseudo-éléments */
+}
+
+#close::before,
+#close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform-origin: center;
+    z-index: 4; /* Inférieur au lien mais supérieur au fond */
+}
+
+#close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#maximize {
+    margin-top: 4px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgb(255, 255, 255); /* La bordure noire du carré */
+    background-color: transparent; /* Pas de remplissage */
+}
+
+#minimize::before {
+    content: '';
+    position: absolute;
+    top: 75%;
+    left: -20%;
+    width: 25%; /* Ajuster la largeur de la barre horizontale */
+    height: 2px; /* Épaisseur de la barre */
+    background-color: rgb(255, 255, 255); /* Couleur de la barre */
+    transform: translate(-50%, -50%);
+}
+
+/* Timeline */
+
+.timeline-container {
+    margin-top: 50px;
+    height: 100%;
+    width: 90%;
+    padding: 20px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    gap: 150px; /* Ajouter de l'espacement entre les éléments */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    height: 4px;
+    background: #ffffff;
+    z-index: 1;
+    width: 200%; /* Augmenter la largeur de la ligne */
+    left: -50%; /* Déplacer la ligne vers la gauche */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 2s ease-in-out;
+}
+
+.timeline-item {
+    margin-left: -70px;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.timeline-item.top::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    width: 4px;
+    height: 60%;
+    background: #ffffff;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item.bottom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 33%;
+    background: #ffffff;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item::before {
+content: '';
+position: absolute;
+top: 51%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 20px;
+height: 20px;
+background: #fff;
+border: 4px solid #ffffff;
+border-radius: 50%;
+z-index: 1;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #ffffff;
+    transform: translateX(-50%);
+    z-index: 1; /* Assurez-vous que le z-index est inférieur à celui de l'image */
+}
+
+.event-description {
+    width: 100%;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left; /* Ajoutez cette ligne pour aligner le texte à gauche */
+}
+
+.event-description h2{
+    font-family: "NTR", serif;
+    font-weight: 300;
+    font-style: normal;
+    width: 100%;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left; /* Ajoutez cette ligne pour aligner le texte à gauche */
+}
+
+.event-description p{
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+.event-image{
+    z-index: 3;
+    margin-top: -80px;
+position: relative; /* Ajoutez cette ligne pour créer un contexte de positionnement */
+}
+
+.timeline-content {
+    height: 200px;
+    width: 520px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ajoutez cette ligne pour créer un contexte de positionnement */
+    z-index: 2; /* Assurez-vous que le z-index est supérieur à celui du trait vertical */
+}
+
+#tc0 {
+    margin-top: -50px;
+}
+
+#tc1 {
+    margin-top: -65px;
+}
+
+#tc2{
+    margin-top: -40px;
+}
+
+#tc3{
+    margin-top: -55px;
+}
+
+.timeline-content h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    }
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.timeline-content ul {
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 10; /* Supprimer le padding par défaut */
+    margin: 0; /* Supprimer la marge par défaut */
+    width: 100%; /* Faire en sorte que la liste prenne toute la largeur */
+    line-height: 0.5; /* Réduire l'interligne entre les éléments */
+}
+
+/* Positionnement alterné */
+.timeline-item.top .timeline-content {
+    transform: translateY(-100%) translateX(17%);
+}
+
+.timeline-item.bottom .timeline-content {
+transform: translateY(100%) translateX(17%);
+}
+
+/* Hidden and visible classes for animations */
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.timeline.visible::before {
+    transform: scaleX(1);
+}
+
+
+/* Animation */
+.prompt-text {
+    margin-left: 7px;
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+    animation: typewriter 1s steps(23) 2s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 11rem; }
+}
+
+@keyframes blinkTextCursor {
+    0%, 100% { border-right-color: rgba(255, 255, 255, .75); }
+    50% { border-right-color: transparent; }
+}

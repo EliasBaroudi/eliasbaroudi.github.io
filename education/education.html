@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulateur de Terminal</title>
+    <link rel="stylesheet" href="education.css"> <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="../transition.css"> <!-- Lien vers le fichier CSS de transition -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=NTR&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+
+    <div class ="transition">
+        <div class = "transition-row row-1">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class = "transition-row row-2">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+    </div>
+
+    <div id="terminal" class="terminal-container hidden">
+        <div class="terminal-header">
+            <div class="buttons">
+                <span id="minimize"></span>
+                <span id="maximize"></span>
+                <span id="close"><a href="../index.html"></a></span>
+            </div>
+            <div class="title">root@kabi: ~</div>
+        </div>
+        <div class="terminal-divider"></div>
+        <div class="terminal-body">
+            <pre class="terminal-content">
+                <span id="prompt" class="prompt hidden">root@kabi:~$</span><span id="typing" class="prompt-text">  cat my_road_to_security.txt</span>
+            </pre>
+            
+            <div class="timeline-container">
+                <div class="timeline hidden">
+                  <div class="timeline-item top hidden">
+                    <div class="timeline-content">
+                      <img class="event-image" src="../assets/lyon2.png" style="width: 25%;" alt="placeholder">
+                       <div id="tc0" class="event-description">
+                        <h2>L2 MIASHS (2023)</h2>
+                        <p>Mathematics and Computer Science Applied to the Humanities and Social Sciences</p>
+                        <ul>
+                            <li>Basics Programmation</li>
+                            <li>Advanced mathematics</li>
+                            <li>Cognitives sciences</li>
+                        </ul>
+                       </div>
+                    </div>
+                  </div>
+                  <div class="timeline-item bottom hidden">
+                    <div class="timeline-content">
+                        <img class="event-image" src="../assets/lyon2.png" style="width: 25%;" alt="placeholder">
+                         <div id="tc1" class="event-description">
+                            <h2>L3 INFORMATIQUE (2024)</h2>
+                            <ul>
+                                <li>Advanced algorithms</li>
+                                <li>Mobile programming</li>
+                                <li>Data Bases</li>
+                                <li>Web development (back-end & front-end)</li>
+                                <li>Digital law</li>
+                            </ul>
+                         </div>
+                      </div>
+                  </div>
+                  <div class="timeline-item top hidden">
+                    <div class="timeline-content">
+                        <img class="event-image" src="../assets/lyon2.png" style="width: 25%;" alt="placeholder">
+                         <div id="tc2"  class="event-description">
+                            <h2>M1 INFORMATIQUE (NOW)</h2>
+                            <ul>
+                                <li>Advanced data bases</li>
+                                <li>Algorithms complexity</li>
+                                <li>Cloud development</li>
+                                <li>Advanced python</li>
+                                <li>Advanced web development</li>
+                                <li>Cybersecurity introduction</li>
+                            </ul>
+                         </div>
+                      </div>
+                  </div>
+                  <div class="timeline-item bottom hidden">
+                    <div class="timeline-content">
+                        <img class="event-image" src="../assets/lyon2label.png" style="width: 25%;" alt="placeholder">
+                         <div id="tc3" class="event-description">
+                            <h2>M2 OPSIE (NEXT YEAR)</h2>
+                            <p>Organization and Protection of IT Systems in Businesses</p>
+                            <ul>
+                                <li>Security management</li>
+                                <li>Legal protection</li>
+                                <li>Cybersecurity</li>
+                            </ul>
+                         </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="education.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>

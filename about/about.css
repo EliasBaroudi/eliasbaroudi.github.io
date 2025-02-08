@@ -1,0 +1,373 @@
+/* Style général */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
+    font-weight: 100; /* Utiliser la variante thin de la police */
+    background: url('../assets/background.png') no-repeat center center fixed; /* Remplacez par le chemin de votre image de fond */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteneur du terminal */
+.terminal-container {
+    width: 90%; /* Augmenter la largeur pour remplir 90% de l'écran */
+    height: 90%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    border-radius: 8px;
+    border: 1px solid #000000; /* Ajouter une bordure noire */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* En-tête du terminal */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000000de; /* Couleur de fond de l'en-tête */
+    color: white;
+    position: relative;
+}
+
+.terminal-header .buttons {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    right: 10px; /* Positionner les boutons à droite */
+    top: 50%;
+    transform: translateY(-50%); /* Centrer verticalement */
+}
+
+.terminal-header .title {
+    flex-grow: 1;
+    text-align: center;
+    color: #ffffff; /* Couleur du texte de l'en-tête */
+}
+
+.terminal-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #000000; /* Couleur de la ligne */
+}
+
+/* Corps du terminal */
+.terminal-body {
+    width: 100%; /* Augmenter la largeur pour remplir 90% de l'écran */
+    height: 100%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    background-color: #000000de; /* Couleur de fond du corps du terminal */
+}
+
+.terminal-content {
+    margin-top : -40px;
+    display: flex;
+    flex-direction: line;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.terminal-content .prompt {
+    font-size: 12px;
+    color: #ff0000; /* Couleur de l'invite de commande */
+}
+
+.terminal-content .prompt-text {
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+}
+
+#close:hover::before,
+#close:hover::after {
+    background-color: rgba(255, 255, 255, 0.75); /* Couleur légèrement plus sombre */
+    transform: translate(-50%, -40%) rotate(45deg); /* Descendre légèrement sur l'axe Y */
+}
+
+#close:hover::after {
+    transform: translate(-50%, -40%) rotate(-45deg); /* Descendre légèrement sur l'axe Y */
+}
+
+#close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    z-index: 3; /* Assurez-vous que le bouton est bien au-dessus */
+}
+
+#close a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5; /* Mettre le lien au-dessus des pseudo-éléments */
+}
+
+#close::before,
+#close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform-origin: center;
+    z-index: 4; /* Inférieur au lien mais supérieur au fond */
+}
+
+#close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#maximize {
+    margin-top: 4px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgb(255, 255, 255); /* La bordure noire du carré */
+    background-color: transparent; /* Pas de remplissage */
+}
+
+#minimize::before {
+    content: '';
+    position: absolute;
+    top: 75%;
+    left: -20%;
+    width: 25%; /* Ajuster la largeur de la barre horizontale */
+    height: 2px; /* Épaisseur de la barre */
+    background-color: rgb(255, 255, 255); /* Couleur de la barre */
+    transform: translate(-50%, -50%);
+}
+
+
+.whoami {
+    margin-top: -140px;
+    width: 50%;
+    color: #ffffff; /* Couleur du texte */
+}
+
+.experience {
+    margin-top: -60px;
+    height: 200px;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 25px;
+    opacity:0;
+    transition: opacity 1s ease-in-out;
+}
+
+.experience-title {
+    height: fit-content;
+    display: flex;
+    flex-direction: column; /* Superposer les éléments en colonnes */
+    gap: 0; /* Aucun espacement horizontal */
+}
+
+.experience-title h2,
+.experience-title p {
+    color:white;
+    font-family: "NTR", serif;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0; /* Supprimer les marges */
+}
+
+
+.experience-description {
+    gap: 20px;
+    margin-top: -20px;
+    height: 70%;
+    color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-description ul{
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 10; /* Supprimer le padding par défaut */
+    margin: 0; /* Supprimer la marge par défaut */
+    width: 100%; /* Faire en sorte que la liste prenne toute la largeur */
+    line-height: 0.5; /* Réduire l'interligne entre les éléments */
+}
+
+#prompt-experience{
+    margin-top:-100px;
+}
+
+.skill-container {
+    margin-top: -50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.skill-container h2{
+    color:white;
+    font-family: "NTR", serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.skill-container img{
+    height: 50px;
+    width: 50px;
+}
+
+.web-dev,
+.prog,
+.app,
+.tool {
+    margin-top:-50px;
+    height: fit-content;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Empêcher les éléments de passer à la ligne */
+    justify-content: center;
+    line-height: 1; /* Enlever l'espacement sur les retours à la ligne */
+    gap: 5px;
+    padding-left: 10px; /* Ajouter du padding à gauche */
+    padding-right: 10px; /* Ajouter du padding à droite */
+}
+
+.web-dev p,
+.prog p,
+.app p,
+.tool p {
+    font-weight: bold;
+    margin-right: 15px;
+    display: flex;
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: flex-start; /* Aligne les éléments à gauche */
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    width: fit-content; /* Ajuste la largeur en fonction du contenu */
+    height: 5px;
+    padding: 5px 3px;
+    border-radius: 4px;
+    flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */    
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: fit-content; /* Ajuste la largeur en fonction du contenu */
+    padding: 5px 3px; /* Ajoute du padding pour éviter un aspect trop serré */
+    border-radius: 4px;
+    transition: transform 0.2s ease-in-out; /* Ajouter une transition pour un effet plus fluide */
+}
+
+.skill:hover {
+    box-shadow: 0 0 10px #1e90ff;
+    transform: scale(1.02); /* Grossir légèrement */
+    transition: transform 0.2s ease-in-out; /* Ajouter une transition pour un effet plus fluide */
+}
+
+/* Hidden and visible classes for animations */
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+
+#typing{
+    margin-left: 20px;
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+    border-right: 2px solid rgba(255,255,255,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* Animation */
+.prompt-text {
+    margin-left: 7px;
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+    animation: typewriter 0.3s steps(7) 2s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+.prompt-text2 {
+    margin-left: 7px;
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+    animation: typewriter2 0.6s steps(14) 3s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+.prompt-text3 {
+    margin-left: 7px;
+    font-size: 12px;
+    color: #ffffff; /* Couleur de l'invite de commande */
+    animation: typewriter3 0.6s steps(14) 4s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 2.5rem; }
+}
+
+@keyframes typewriter2 {
+    from { width: 0; }
+    to { width: 9.9rem; }
+}
+
+@keyframes typewriter3 {
+    from { width: 0; }
+    to { width: 9.4rem; }
+}
+
+@keyframes blinkTextCursor {
+    0%, 100% { border-right-color: rgba(255, 255, 255, .75); }
+    50% { border-right-color: transparent; }
+}
+
+#presentation{
+    opacity:0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+#presentation.visible{
+    opacity: 1;
+}
+
+.skillgroup{
+    margin-top: -80px;
+    height: fit-content;
+    gap: 0px;
+    text-align: center;
+    opacity:0;
+    transition: opacity 1s ease-in-out;
+}
+
+.skillgroup.visible{
+    opacity: 1; 
+}
