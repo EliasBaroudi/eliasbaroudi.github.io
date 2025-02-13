@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Elias Baroudi</title>
-    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS externe -->
-    <link rel="stylesheet" href="transition.css"> <!-- Lien vers le fichier CSS de transition -->
+    <link rel="icon" href="assets/kaliparodie.png" type="image/x-png">
+    <title>Elias BAROUDI</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="transition.css"> 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=NTR&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -33,26 +34,23 @@
     </div>
 
     <header>
-        <!-- Navigation -->
         <nav id="nav">
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <button id="btn1" onclick="showBox(1)" class="activeBtn">Home</button>
+            <button id="btn2" onclick="showBox(2)" class="">Hobbies</button>
+            <button id="btn3" onclick="showBox(3)" class="">Keywords</button>
+            <button id="btn4" onclick="showBox(4)" class="">Write-Ups</button>
         </nav>
     </header>
 
     <main>
-        <!-- Section de présentation -->
 
-        <div class="top-div"></div> 
+        <div class="top-div">
             <div id="text-container"> 
                 <section id="presentation">
                     <p><span id="pres-name">I AM <span class="name-highlight">ELIAS BAROUDI</span></span></p>
                     <p>A CYBERSECURITY ENTHUSIAST</p>
                 </section>
 
-                <!-- Section synopsis -->
                 <div id="synopsis">
                     <p>
                     Welcome to my website! I am a first-year Master's student in Computer Science at Lyon 2
@@ -63,28 +61,74 @@
                 </div>
             </div>
 
-            <!-- Conteneur pour le logo Kali Linux et les boutons -->
-            <div id="kali-container">
-                <!-- Logo Kali Linux -->
-                <div id="center-logo">
-                    <img src="assets/kaliparodie.png" alt="Kali Linux Logo">
-                </div>
+            <div id="menu-container"> 
+                <div id="kali-container" class = "visible activeBox">
+                    <div id="center-logo">
+                        <img src="assets/kaliparodie.png" alt="Kali Linux Logo">
+                    </div>
 
-                <!-- Boutons interactifs autour du logo -->
-                <div class="button-group">
-                    <div class="button"><a href="projects/projects.html">PROJECTS</a></div>
-                    <div class="button"><a href="about/about.html">ABOUT</a></div>
-                    <div class="button"><a href="education/education.html">EDUCATION</a></div>
-                    <div class="button" id="contact-button">
-                        <span class="contact-text">CONTACT</span>
-                        <div class="icons">
-                            <a href="https://www.linkedin.com/in/elias-baroudi-301483270/"><img id="linkedin" src="assets/linkedin.svg" alt="LinkedIn Icon" class="icon" style="width: 50%;"></a>
-                            <a href="https://github.com/EliasBaroudi"><img id="github" src="assets/github.svg" alt="GitHub Icon" class="icon" style="width: 50%;"></a>
-                            <a><img id="mail" src="assets/mail.svg" alt="Email Icon" class="icon" style="width: 50%;"></a>
+                    <div class="button-group" style="transform : translateX(0%);">
+                        <div class="button"><a href="projects/projects.html">PROJECTS</a></div>
+                        <div class="button"><a href="about/about.html">ABOUT</a></div>
+                        <div class="button"><a href="education/education.html">EDUCATION</a></div>
+                        <div class="button" id="contact-button">
+                            <span class="contact-text">CONTACT</span>
+                            <div class="icons">
+                                <a href="https://www.linkedin.com/in/elias-baroudi-301483270/"><img id="linkedin" src="assets/linkedin.svg" alt="LinkedIn Icon" class="icon" style="width: 50%;"></a>
+                                <a href="https://github.com/EliasBaroudi"><img id="github" src="assets/github.svg" alt="GitHub Icon" class="icon" style="width: 50%;"></a>
+                                <a><img id="mail" src="assets/mail.svg" alt="Email Icon" class="icon" style="width: 50%;"></a>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
+
+
+                <div id="box2" class="box hidden" style="transform : translateX(200%);">
+                    <div id="sports" class="sub-box">
+                        <img src="assets/sport.png">
+                        <p>I am passionate about <span style="font-weight: 600; color: #2777ff;">sports</span> in general, whether it be team sports or combat sports. The concept of sport is something that motivates me every day and helps me maintain strong mental stability. I have been practicing Judo and weightlifting for six years, and I am an enthusiast of team sports such as basketball and football.</p>
+                    </div>  
+
+                    <div id="hacking" class="sub-box">
+                        <img src="assets/flag.png">
+                        <p>Outside of my studies, I have developed a particular interest in <span style="font-weight: 600; color: #2777ff;">Capture The Flag</span> (CTF) challenges, a concept that is highly valuable in cybersecurity. The idea is to infiltrate computer systems in order to retrieve a "flag" and earn points. I have been exploring this field for two years now, and it continues to strengthen my skills in penetration testing and computer science in general.</p>
+                    </div>  
+                    
+                    <div id="info" class="sub-box">
+                        <img src="assets/it.png">
+                        <p>First and foremost, I am someone who is passionate about <span style="font-weight: 600; color: #2777ff;">technology</span>, particularly the functioning of complex systems, no matter how intricate they may be. I am constantly eager to expand my knowledge on the subject through documentaries, research papers, and by attending conferences.</p>
+                    </div>  
+                </div>
+
+                <div id="box3" class="box hidden" style="transform : translateX(200%);">
+                    <div id="competitive" class="sub-box">
+                        <img src="assets/competition.png">
+                        <p>I am a highly <span style="font-weight: 600; color: #2777ff;">competitive</span> individual. I hold a black belt in Judo, runner-up in the regional competition , and the winner of an academic challenge (SecuriDay 2024-2025). I am eager to expand this thirst for competition and challenges into the field of technology, particularly through Capture The Flag (CTF) challenges, which often involve large-scale competitions.</p>
+                    </div>
+
+                    <div id="consistent" class="sub-box">
+                        <img src="assets/consistency.png">
+                        <p>I am someone who is highly <span style="font-weight: 600; color: #2777ff;">consistent</span> in carrying out projects. My familiarity with this concept is reflected in my performance in Judo and weightlifting, disciplines that place values such as discipline and rigor at the core of success. I hope that this quality will allow me to achieve continued success in the future projects I wish to undertake.</p>
+                    </div>
+                    
+                    <div id="selfemp" class="sub-box">
+                        <img src="assets/independant.png">
+                        <p>I am someone who is capable of working <span style="font-weight: 600; color: #2777ff;">independently</span>. I am accustomed to solving problems on my own by conducting research and gathering information on various topics. As a university student, I have learned the importance of self-organization to achieve strong results. This skill proved invaluable during my last remote internship, where I was encouraged to organize my own work and manage tasks autonomously.</p>
+                    </div>
+                </div>
+
+                <div id="box4" class="box hidden" style="transform : translateX(200%);">
+                    <div id="writeups" class="sub-box">
+                        <img src="assets/writing.png">
+                        <p>I value sharing past experiences in Capture The Flag (CTF) challenges. Not only does this provide an opportunity for others to learn, but it also helps me reinforce the concepts I’ve encountered while solving these puzzles. By discussing and analyzing these challenges, I continue to deepen my understanding and improve my skills.<br><span style="font-weight: 600; color: #2777ff;">Coming Soon !</span>
+                        </p>
+                    </div>
+                </div>
+
             </div>
+
         </div>    
         
     </main>
@@ -94,7 +138,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script> <!-- Lien vers un fichier JavaScript externe si nécessaire -->
+    <script src="script.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

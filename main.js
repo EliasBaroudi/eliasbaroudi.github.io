@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function revealTransition() {
         return new Promise((resolve) => {
             gsap.set(".block", { scaleY: 1 });
-            gsap.to(".block", { // <-- Fixed class selector
-                scaleY: 0, // <-- Fixed typo
+            gsap.to(".block", { 
+                scaleY: 0, 
                 duration: 1,
                 stagger: {
                     each: 0.1,
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function animateTransition() {
         return new Promise((resolve) => {
-            gsap.set(".block", { visibility: "visible", scaleY: 0 }); // <-- Fixed typo
+            gsap.set(".block", { visibility: "visible", scaleY: 0 }); 
             gsap.to(".block", {
                 scaleY: 1,
                 duration: 1,
@@ -54,3 +54,84 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+function showBox(boxNumber) {
+    
+    const activeBox = document.querySelector(".activeBox");
+    const activeBtn = document.querySelector(".activeBtn"); 
+
+    console.log(boxNumber, parseInt(activeBtn.id[3]))
+
+    if (boxNumber != activeBtn.id) {
+
+        activeBtn.classList.remove("activeBtn");
+        activeBox.style.transform = "translateX(200%)";
+        activeBox.classList.remove("activeBox");
+
+        setTimeout(() => {
+            activeBox.classList.remove("visible");
+            activeBox.classList.add("hidden");
+        }, 800);
+        
+
+        switch (boxNumber) {
+            case 1:
+                console.log('1');
+
+                targetBtn = document.getElementById("btn1");
+                targetBtn.classList.add("activeBtn");
+                
+                targetBox = document.getElementById("kali-container");
+                targetBox.classList.add("activeBox");
+                targetBox.classList.remove("hidden");
+                targetBox.classList.add("visible");
+                targetBox.style.transform = "translateX(0%)";
+                break;
+
+            case 2:
+                console.log('2');
+
+                targetBtn = document.getElementById("btn2");
+                targetBtn.classList.add("activeBtn");
+                
+                targetBox = document.getElementById("box2");
+                targetBox.classList.add("visible");
+                targetBox.classList.remove("hidden");
+                targetBox.classList.add("activeBox");
+                targetBox.style.transform = "translateX(0%)";
+                break;
+
+            case 3:
+                console.log('3');
+
+                targetBtn = document.getElementById("btn3")
+                targetBtn.classList.add("activeBtn");
+                
+
+                targetBox = document.getElementById("box3");
+                targetBox.classList.add("visible");
+                targetBox.classList.remove("hidden");
+                targetBox.classList.add("activeBox");
+                targetBox.style.transform = "translateX(0%)";
+                break;
+
+            case 4:
+                console.log('4');
+
+                targetBtn = document.getElementById("btn4")
+                targetBtn.classList.add("activeBtn");
+                
+                targetBox = document.getElementById("box4");
+                targetBox.classList.add("visible");
+                targetBox.classList.remove("hidden");
+                targetBox.classList.add("activeBox");
+                targetBox.style.transform = "translateX(0%)";
+                break;
+
+        }
+
+    }
+}
+

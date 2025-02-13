@@ -1,10 +1,9 @@
-/* Style général */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
-    font-weight: 100; /* Utiliser la variante thin de la police */
-    background: url('../assets/background.png') no-repeat center center fixed; /* Remplacez par le chemin de votre image de fond */
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 100; 
+    background: url('../assets/background.png') no-repeat center center fixed; 
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -12,23 +11,21 @@ body {
     height: 100vh;
 }
 
-/* Conteneur du terminal */
 .terminal-container {
-    width: 90%; /* Augmenter la largeur pour remplir 90% de l'écran */
-    height: 90%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    width: 90%; 
+    height: 90%; 
     border-radius: 8px;
-    border: 1px solid #000000; /* Ajouter une bordure noire */
+    border: 1px solid #000000;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
 
-/* En-tête du terminal */
 .terminal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #000000de; /* Couleur de fond de l'en-tête */
+    background-color: #000000de;
     color: white;
     position: relative;
 }
@@ -37,32 +34,31 @@ body {
     display: flex;
     gap: 5px;
     position: absolute;
-    right: 10px; /* Positionner les boutons à droite */
+    right: 10px; 
     top: 50%;
-    transform: translateY(-50%); /* Centrer verticalement */
+    transform: translateY(-50%); 
 }
 
 .terminal-header .title {
     flex-grow: 1;
     text-align: center;
-    color: #ffffff; /* Couleur du texte de l'en-tête */
+    color: #ffffff;
 }
 
 .terminal-divider {
     height: 1px;
     width: 100%;
-    background-color: #000000; /* Couleur de la ligne */
+    background-color: #000000; 
 }
 
-/* Corps du terminal */
 .terminal-body {
-    width: 100%; /* Augmenter la largeur pour remplir 90% de l'écran */
-    height: 100%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    width: 100%; 
+    height: 100%;
     padding: 20px;
     font-size: 1rem;
     line-height: 1.5;
     white-space: pre-wrap;
-    background-color: #000000de; /* Couleur de fond du corps du terminal */
+    background-color: #000000de; 
 }
 
 .terminal-content {
@@ -73,18 +69,15 @@ body {
     align-items: flex-start;
 }
 
-.terminal-content img{
-}
-
 .terminal-content .prompt {
     font-size: 12px;
-    color: #ff0000; /* Couleur de l'invite de commande */
+    color: #ff0000; 
 }
 
 #typing{
     margin-left: 20px;
     font-size: 12px;
-    color: #ffffff; /* Couleur de l'invite de commande */
+    color: #ffffff; 
     border-right: 2px solid rgba(255,255,255,.75);
     text-align: center;
     white-space: nowrap;
@@ -94,19 +87,19 @@ body {
 
 #close:hover::before,
 #close:hover::after {
-    background-color: rgba(255, 255, 255, 0.75); /* Couleur légèrement plus sombre */
-    transform: translate(-50%, -40%) rotate(45deg); /* Descendre légèrement sur l'axe Y */
+    background-color: rgba(255, 255, 255, 0.75);
+    transform: translate(-50%, -40%) rotate(45deg); 
 }
 
 #close:hover::after {
-    transform: translate(-50%, -40%) rotate(-45deg); /* Descendre légèrement sur l'axe Y */
+    transform: translate(-50%, -40%) rotate(-45deg);
 }
 
 #close {
     position: relative;
     width: 20px;
     height: 20px;
-    z-index: 3; /* Assurez-vous que le bouton est bien au-dessus */
+    z-index: 3; 
 }
 
 #close a {
@@ -116,7 +109,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5; /* Mettre le lien au-dessus des pseudo-éléments */
+    z-index: 5; 
 }
 
 #close::before,
@@ -129,7 +122,7 @@ body {
     height: 2px;
     background-color: rgb(255, 255, 255);
     transform-origin: center;
-    z-index: 4; /* Inférieur au lien mais supérieur au fond */
+    z-index: 4; 
 }
 
 #close::before {
@@ -144,8 +137,8 @@ body {
     margin-top: 4px;
     width: 8px;
     height: 8px;
-    border: 2px solid rgb(255, 255, 255); /* La bordure noire du carré */
-    background-color: transparent; /* Pas de remplissage */
+    border: 2px solid rgb(255, 255, 255); 
+    background-color: transparent; 
 }
 
 #minimize::before {
@@ -153,13 +146,11 @@ body {
     position: absolute;
     top: 75%;
     left: -20%;
-    width: 25%; /* Ajuster la largeur de la barre horizontale */
-    height: 2px; /* Épaisseur de la barre */
-    background-color: rgb(255, 255, 255); /* Couleur de la barre */
+    width: 25%; 
+    height: 2px; 
+    background-color: rgb(255, 255, 255);
     transform: translate(-50%, -50%);
 }
-
-/* Timeline */
 
 .timeline-container {
     margin-top: 50px;
@@ -174,7 +165,7 @@ body {
     align-items: center;
     padding: 20px 0;
     position: relative;
-    gap: 150px; /* Ajouter de l'espacement entre les éléments */
+    gap: 150px; 
 }
 
 .timeline::before {
@@ -186,8 +177,8 @@ body {
     height: 4px;
     background: #ffffff;
     z-index: 1;
-    width: 200%; /* Augmenter la largeur de la ligne */
-    left: -50%; /* Déplacer la ligne vers la gauche */
+    width: 200%; 
+    left: -50%;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 2s ease-in-out;
@@ -250,7 +241,7 @@ z-index: 1;
     height: 100%;
     background: #ffffff;
     transform: translateX(-50%);
-    z-index: 1; /* Assurez-vous que le z-index est inférieur à celui de l'image */
+    z-index: 1; 
 }
 
 .event-description {
@@ -260,7 +251,7 @@ z-index: 1;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    text-align: left; /* Ajoutez cette ligne pour aligner le texte à gauche */
+    text-align: left; 
 }
 
 .event-description h2{
@@ -273,7 +264,7 @@ z-index: 1;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    text-align: left; /* Ajoutez cette ligne pour aligner le texte à gauche */
+    text-align: left; 
 }
 
 .event-description p{
@@ -284,7 +275,7 @@ z-index: 1;
 .event-image{
     z-index: 3;
     margin-top: -80px;
-position: relative; /* Ajoutez cette ligne pour créer un contexte de positionnement */
+position: relative; 
 }
 
 .timeline-content {
@@ -295,8 +286,8 @@ position: relative; /* Ajoutez cette ligne pour créer un contexte de positionne
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: relative; /* Ajoutez cette ligne pour créer un contexte de positionnement */
-    z-index: 2; /* Assurez-vous que le z-index est supérieur à celui du trait vertical */
+    position: relative; 
+    z-index: 2; 
 }
 
 #tc0 {
@@ -329,13 +320,12 @@ position: relative; /* Ajoutez cette ligne pour créer un contexte de positionne
 .timeline-content ul {
     font-size: 1rem;
     color: #ffffff;
-    padding: 10; /* Supprimer le padding par défaut */
-    margin: 0; /* Supprimer la marge par défaut */
-    width: 100%; /* Faire en sorte que la liste prenne toute la largeur */
-    line-height: 0.5; /* Réduire l'interligne entre les éléments */
+    padding: 10; 
+    margin: 0;
+    width: 100%; 
+    line-height: 0.5; 
 }
 
-/* Positionnement alterné */
 .timeline-item.top .timeline-content {
     transform: translateY(-100%) translateX(17%);
 }
@@ -344,7 +334,6 @@ position: relative; /* Ajoutez cette ligne pour créer un contexte de positionne
 transform: translateY(100%) translateX(17%);
 }
 
-/* Hidden and visible classes for animations */
 .hidden {
     visibility: hidden;
 }
@@ -360,11 +349,10 @@ transform: translateY(100%) translateX(17%);
 }
 
 
-/* Animation */
 .prompt-text {
     margin-left: 7px;
     font-size: 12px;
-    color: #ffffff; /* Couleur de l'invite de commande */
+    color: #ffffff; 
     animation: typewriter 1s steps(23) 2s 1 normal both,
                blinkTextCursor 500ms steps(44) infinite normal;
 }

@@ -1,10 +1,9 @@
-/* Style général */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
-    font-weight: 100; /* Utiliser la variante thin de la police */
-    background: url('../assets/background.png') no-repeat center center fixed; /* Remplacez par le chemin de votre image de fond */
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 100; 
+    background: url('../assets/background.png') no-repeat center center fixed; 
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -12,23 +11,21 @@ body {
     height: 100vh;
 }
 
-/* Conteneur du terminal */
 .terminal-container {
-    width: 90%; /* Augmenter la largeur pour remplir 90% de l'écran */
-    height: 90%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    width: 90%; 
+    height: 90%; 
     border-radius: 8px;
-    border: 1px solid #000000; /* Ajouter une bordure noire */
+    border: 1px solid #000000;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
 
-/* En-tête du terminal */
 .terminal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #000000de; /* Couleur de fond de l'en-tête */
+    background-color: #000000de; 
     color: white;
     position: relative;
 }
@@ -37,32 +34,31 @@ body {
     display: flex;
     gap: 5px;
     position: absolute;
-    right: 10px; /* Positionner les boutons à droite */
+    right: 10px; 
     top: 50%;
-    transform: translateY(-50%); /* Centrer verticalement */
+    transform: translateY(-50%); 
 }
 
 .terminal-header .title {
     flex-grow: 1;
     text-align: center;
-    color: #ffffff; /* Couleur du texte de l'en-tête */
+    color: #ffffff; 
 }
 
 .terminal-divider {
     height: 1px;
     width: 100%;
-    background-color: #000000; /* Couleur de la ligne */
+    background-color: #000000; 
 }
 
-/* Corps du terminal */
 .terminal-body {
-    width: 100%; /* Augmenter la largeur pour remplir 90% de l'écran */
-    height: 100%; /* Augmenter la hauteur pour remplir 90% de l'écran */
+    width: 100%; 
+    height: 100%;
     padding: 20px;
     font-size: 1rem;
     line-height: 1.5;
     white-space: pre-wrap;
-    background-color: #000000de; /* Couleur de fond du corps du terminal */
+    background-color: #000000de;
 }
 
 .terminal-content {
@@ -75,29 +71,29 @@ body {
 
 .terminal-content .prompt {
     font-size: 12px;
-    color: #ff0000; /* Couleur de l'invite de commande */
+    color: #ff0000; 
 }
 
 .terminal-content .prompt-text {
     font-size: 12px;
-    color: #ffffff; /* Couleur de l'invite de commande */
+    color: #ffffff; 
 }
 
 #close:hover::before,
 #close:hover::after {
-    background-color: rgba(255, 255, 255, 0.75); /* Couleur légèrement plus sombre */
-    transform: translate(-50%, -40%) rotate(45deg); /* Descendre légèrement sur l'axe Y */
+    background-color: rgba(255, 255, 255, 0.75); 
+    transform: translate(-50%, -40%) rotate(45deg); 
 }
 
 #close:hover::after {
-    transform: translate(-50%, -40%) rotate(-45deg); /* Descendre légèrement sur l'axe Y */
+    transform: translate(-50%, -40%) rotate(-45deg); 
 }
 
 #close {
     position: relative;
     width: 20px;
     height: 20px;
-    z-index: 3; /* Assurez-vous que le bouton est bien au-dessus */
+    z-index: 3;
 }
 
 #close a {
@@ -107,7 +103,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5; /* Mettre le lien au-dessus des pseudo-éléments */
+    z-index: 5; 
 }
 
 #close::before,
@@ -120,7 +116,7 @@ body {
     height: 2px;
     background-color: rgb(255, 255, 255);
     transform-origin: center;
-    z-index: 4; /* Inférieur au lien mais supérieur au fond */
+    z-index: 4;
 }
 
 #close::before {
@@ -135,8 +131,8 @@ body {
     margin-top: 4px;
     width: 8px;
     height: 8px;
-    border: 2px solid rgb(255, 255, 255); /* La bordure noire du carré */
-    background-color: transparent; /* Pas de remplissage */
+    border: 2px solid rgb(255, 255, 255);
+    background-color: transparent; 
 }
 
 #minimize::before {
@@ -144,9 +140,9 @@ body {
     position: absolute;
     top: 75%;
     left: -20%;
-    width: 25%; /* Ajuster la largeur de la barre horizontale */
-    height: 2px; /* Épaisseur de la barre */
-    background-color: rgb(255, 255, 255); /* Couleur de la barre */
+    width: 25%; 
+    height: 2px; 
+    background-color: rgb(255, 255, 255); 
     transform: translate(-50%, -50%);
 }
 
@@ -154,7 +150,7 @@ body {
 .whoami {
     margin-top: -140px;
     width: 50%;
-    color: #ffffff; /* Couleur du texte */
+    color: #ffffff; 
 }
 
 .experience {
@@ -173,8 +169,8 @@ body {
 .experience-title {
     height: fit-content;
     display: flex;
-    flex-direction: column; /* Superposer les éléments en colonnes */
-    gap: 0; /* Aucun espacement horizontal */
+    flex-direction: column; 
+    gap: 0; 
 }
 
 .experience-title h2,
@@ -183,7 +179,7 @@ body {
     font-family: "NTR", serif;
     font-weight: bold;
     font-style: normal;
-    margin: 0; /* Supprimer les marges */
+    margin: 0; 
 }
 
 
@@ -199,10 +195,10 @@ body {
 .experience-description ul{
     font-size: 1rem;
     color: #ffffff;
-    padding: 10; /* Supprimer le padding par défaut */
-    margin: 0; /* Supprimer la marge par défaut */
-    width: 100%; /* Faire en sorte que la liste prenne toute la largeur */
-    line-height: 0.5; /* Réduire l'interligne entre les éléments */
+    padding: 10;
+    margin: 0; 
+    width: 100%;
+    line-height: 0.5; 
 }
 
 #prompt-experience{
@@ -239,12 +235,12 @@ body {
     width: 400px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* Empêcher les éléments de passer à la ligne */
+    flex-wrap: wrap; 
     justify-content: center;
-    line-height: 1; /* Enlever l'espacement sur les retours à la ligne */
+    line-height: 1; 
     gap: 5px;
-    padding-left: 10px; /* Ajouter du padding à gauche */
-    padding-right: 10px; /* Ajouter du padding à droite */
+    padding-left: 10px; 
+    padding-right: 10px;
 }
 
 .web-dev p,
@@ -254,34 +250,34 @@ body {
     font-weight: bold;
     margin-right: 15px;
     display: flex;
-    align-items: center; /* Centre les éléments verticalement */
-    justify-content: flex-start; /* Aligne les éléments à gauche */
+    align-items: center; 
+    justify-content: flex-start; 
     height: 20px;
     background-color: rgb(255, 255, 255);
-    width: fit-content; /* Ajuste la largeur en fonction du contenu */
+    width: fit-content; 
     height: 5px;
     padding: 5px 3px;
     border-radius: 4px;
-    flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */    
+    flex-wrap: nowrap; 
 }
 
 .skill {
     display: flex;
     align-items: center;
     background-color: rgb(255, 255, 255);
-    width: fit-content; /* Ajuste la largeur en fonction du contenu */
-    padding: 5px 3px; /* Ajoute du padding pour éviter un aspect trop serré */
+    width: fit-content;
+    padding: 5px 3px; 
     border-radius: 4px;
-    transition: transform 0.2s ease-in-out; /* Ajouter une transition pour un effet plus fluide */
+    transition: transform 0.2s ease-in-out; 
 }
 
 .skill:hover {
     box-shadow: 0 0 10px #1e90ff;
-    transform: scale(1.02); /* Grossir légèrement */
-    transition: transform 0.2s ease-in-out; /* Ajouter une transition pour un effet plus fluide */
+    transform: scale(1.02); 
+    transition: transform 0.2s ease-in-out; 
 }
 
-/* Hidden and visible classes for animations */
+
 .hidden {
     visibility: hidden;
 }
@@ -296,7 +292,7 @@ body {
 #typing{
     margin-left: 20px;
     font-size: 12px;
-    color: #ffffff; /* Couleur de l'invite de commande */
+    color: #ffffff; 
     border-right: 2px solid rgba(255,255,255,.75);
     text-align: center;
     white-space: nowrap;
@@ -304,11 +300,11 @@ body {
 }
 
 
-/* Animation */
+
 .prompt-text {
     margin-left: 7px;
     font-size: 12px;
-    color: #ffffff; /* Couleur de l'invite de commande */
+    color: #ffffff; 
     animation: typewriter 0.3s steps(7) 2s 1 normal both,
                blinkTextCursor 500ms steps(44) infinite normal;
 }
@@ -316,7 +312,7 @@ body {
 .prompt-text2 {
     margin-left: 7px;
     font-size: 12px;
-    color: #ffffff; /* Couleur de l'invite de commande */
+    color: #ffffff; 
     animation: typewriter2 0.6s steps(14) 3s 1 normal both,
                blinkTextCursor 500ms steps(44) infinite normal;
 }
@@ -324,7 +320,7 @@ body {
 .prompt-text3 {
     margin-left: 7px;
     font-size: 12px;
-    color: #ffffff; /* Couleur de l'invite de commande */
+    color: #ffffff;
     animation: typewriter3 0.6s steps(14) 4s 1 normal both,
                blinkTextCursor 500ms steps(44) infinite normal;
 }

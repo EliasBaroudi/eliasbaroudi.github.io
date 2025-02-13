@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Show the terminal
     setTimeout(() => {
         const terminal = document.getElementById('terminal');
         terminal.classList.remove('hidden');
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1200);
     
 
-    // Show the prompt
     setTimeout(() => {
         const prompt = document.getElementById('prompt');
         prompt.classList.remove('hidden');
@@ -16,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }, 1600);
 
-    // Show the text
     setTimeout(() => {
         const typing1 = document.getElementById('typing');
         typing1.removeAttribute('id');
@@ -26,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
         pres.classList.add('visible');
     }, 2400);    
 
-    // Show the prompt
     setTimeout(() => {
         const typing2 = document.getElementsByClassName('prompt-text2')[0];
         typing2.id = 'typing';
@@ -37,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
         prompt.classList.add('visible');
     }, 3000);
 
-    // Show the experience
     setTimeout(() => {
         const typing2 = document.getElementById('typing');
         typing2.removeAttribute('id');
@@ -47,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         pres.classList.add('visible');
     }, 3500); 
 
-    // Show the prompt
     setTimeout(() => {
         const typing3 = document.getElementsByClassName('prompt-text3')[0];
         typing3.id = 'typing';
@@ -58,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
         prompt.classList.add('visible');
     }, 4000);
 
-    // Step 2: Show the text
     setTimeout(() => {
         const typing3 = document.getElementById('typing');
         typing3.removeAttribute('id');
