@@ -1,6 +1,5 @@
 <?php
 
-$content = file_get_contents('fr_lang.php');
-echo $content;
+highlight_file('path/to/file.php');
 
 ?>
