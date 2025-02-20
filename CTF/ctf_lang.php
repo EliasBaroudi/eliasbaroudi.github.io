@@ -1,5 +1,5 @@
 <?php
 
-system('cat en_lang.php');
+readfile('en_lang.php');
 
 ?>
