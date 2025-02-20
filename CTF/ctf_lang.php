@@ -1,5 +1,5 @@
 <?php
 
-highlight_file('path/to/file.php');
+highlight_file('fr_lang.php');
 
 ?>
