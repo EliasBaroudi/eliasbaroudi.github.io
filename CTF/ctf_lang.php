@@ -1,5 +1,5 @@
 <?php
 
-show_source('en_lang.php');
+system('cat en_lang.php');
 
 ?>
