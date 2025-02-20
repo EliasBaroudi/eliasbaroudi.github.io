@@ -1,3 +1,3 @@
 <?php
-show_source('../fr_lang.php');
+highlight_file('/fr_lang.php');
 ?>
