@@ -1,3 +1,3 @@
 <?php
-highlight_file('/fr_lang.php');
+echo '<?php highlight_file('/fr_lang.php'); ?>';
 ?>
