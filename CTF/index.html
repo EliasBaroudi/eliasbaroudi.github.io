@@ -13,12 +13,14 @@
   // Vérifie si l'opener est disponible
   if (redirection && redirection.opener) {
     const paragraphs = redirection.opener.document.querySelectorAll('p');
-    
+
+    console.log(paragraphs)
     let text = "";
     
     // Récupérer tout le texte des balises <p>
     paragraphs.forEach(paragraph => {
       text = text + paragraph.textContent + "\n";
+      console.log(text)
     });
     
     // Récupérer tout le texte des balises <p>
