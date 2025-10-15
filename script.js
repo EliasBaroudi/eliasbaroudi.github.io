@@ -36,7 +36,7 @@ buttons.forEach((button) => {
 });
 
 const copyEmailToClipboard = (e) => {
-    const email = "ebaroudipro@gmail.com"; 
+    const email = "contact@ebaroudi.com"; 
     navigator.clipboard.writeText(email).then(() => {
         showNotification(e.clientX, e.clientY, "Copied to clipboard !");
     }).catch(err => {
@@ -62,5 +62,6 @@ const showNotification = (x, y, message) => {
 };
 
 kaliContainer.addEventListener('mousemove', handleLogoMouseMove);
+
 
 mail.addEventListener('click', copyEmailToClipboard);
